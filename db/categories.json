@@ -1,0 +1,18 @@
+[
+  { "name": "Expense A", "id": 1, "type": "Expenses" },
+  { "name": "Expense B", "id": 2, "type": "Expenses" },
+  { "name": "Expense C", "id": 3, "type": "Expenses" },
+  { "name": "Expense D", "id": 4, "type": "Expenses" },
+  { "name": "Product A", "id": 5, "type": "COGS" },
+  { "name": "Product B", "id": 6, "type": "COGS" },
+  { "name": "Product C", "id": 7, "type": "COGS" },
+  { "name": "Product D", "id": 8, "type": "COGS" },
+  { "name": "Bank A", "id": 9, "type": "Banks" },
+  { "name": "Bank B", "id": 10, "type": "Banks" },
+  { "name": "Bank C", "id": 11, "type": "Banks" },
+  { "name": "Bank D", "id": 12, "type": "Banks" },
+  { "name": "Income A", "id": 13, "type": "Income" },
+  { "name": "Income B", "id": 14, "type": "Income" },
+  { "name": "Income C", "id": 15, "type": "Income" },
+  { "name": "Income D", "id": 16, "type": "Income" }
+]

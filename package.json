@@ -1,0 +1,37 @@
+{
+  "name": "example-nextjs",
+  "private": true,
+  "version": "0.13.11",
+  "scripts": {
+    "dev": "next dev",
+    "seed": "node dbGenerator/generateRecords.js",
+    "build": "next build",
+    "bundle": "node scripts/bundle.js",
+    "start": "next start",
+    "lint": "next lint",
+    "check": "tsc --pretty --noEmit"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.7.13",
+    "@types/react": "18.2.0",
+    "fs-extra": "^11.1.1",
+    "graphql": "^16.1.0",
+    "graphql-yoga": "3.9.1",
+    "next": "13.3.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tslib": "2.5.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "18.16.3",
+    "@types/react": "18.2.0",
+    "autoprefixer": "^10.4.14",
+    "esbuild": "0.17.18",
+    "eslint": "8.39.0",
+    "eslint-config-next": "13.3.0",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.2",
+    "typescript": "5.0.4"
+  }
+}
