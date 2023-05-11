@@ -6,7 +6,7 @@ const CategoryLoading = () => {
       </td>
       {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((month) => (
         <td className="px-6 py-4 hover:bg-gray-100 cursor-pointer" key={month}>
-          <div className="animate-pulse w-12 h-2 bg-slate-200 rounded-sm"></div>
+        <div className="animate-pulse w-12 h-2 bg-slate-200 rounded-sm"></div>
         </td>
       ))}
     </tr>

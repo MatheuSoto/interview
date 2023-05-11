@@ -1,7 +1,7 @@
 
 const recordSchema = /* GraphQL */`
   type Record {
-    id: ID!
+    id: Int!
     category_id: Int
     name: String
     amount: Int

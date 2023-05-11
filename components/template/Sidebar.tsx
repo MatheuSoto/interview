@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { RecordContext } from "../store/recordContext";
-import RecordsList from "./RecordsList";
+import { RecordContext } from "../../store/RecordContext";
+import CategorySidebar from "../categories/CategorySidebar";
 
 const Sidebar = () => {
   const { record } = useContext(RecordContext);
@@ -10,16 +10,7 @@ const Sidebar = () => {
       {record ? (
         <div className="flex flex-col justify-between flex-1 ">
           <nav>
-            <div>
-              <div className="text-md px-4 py-2 border-b items-center bg-gray-100 text-gray-700  flex justify-between dark:text-gray-400">
-                <div>
-                  <div className="text-xs text-gray-400">{record.month} 2022</div>
-                  <div className="font-bold">{record.name}</div>
-                </div>
-                <div>${record.value}</div>
-              </div>
-              <RecordsList record={record}  />
-            </div>
+            <CategorySidebar />
           </nav>
         </div>
       ) : (

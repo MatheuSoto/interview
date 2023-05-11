@@ -1,7 +1,7 @@
 import { ApolloProvider } from "@apollo/client";
 import "../public/styles.css";
 import client from "../lib/graphql";
-import { RecordProvider } from "../store/recordContext";
+import { RecordProvider } from "../store/RecordContext";
 
 function MyApp({ Component, pageProps }) {
   return (

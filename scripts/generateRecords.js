@@ -16,7 +16,6 @@ function generateRecords() {
     { length: 26 },
     (_, i) => `Product ${String.fromCharCode(i + 65)}`
   );
-  let categoryCount = 0;
   let monthIndex = 0;
   const randomAmounts = new Set();
   while (randomAmounts.size < categories * productsPerCategory) {
@@ -44,7 +43,6 @@ function generateRecords() {
     });
 
     if (i % productsPerCategory === productsPerCategory - 1) {
-      categoryCount++;
       monthIndex = 0;
     } else {
       monthIndex++;

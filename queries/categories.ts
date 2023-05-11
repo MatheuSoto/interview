@@ -1,18 +1,16 @@
 import { gql } from "@apollo/client";
 
-const GET_CATEGORIES = (type: string) => {
-  return gql`
-    {
-      categories(type: "${type}") {
-        id
+const GET_CATEGORIES = gql`
+  query categories($type: String) {
+    categories(type: $type) {
+      id
+      name
+      months {
         name
-        months {
-          name
-          value
-        }
+        amount
       }
     }
-  `;
-};
+  }
+`;
 
-export default GET_CATEGORIES
+export default GET_CATEGORIES;

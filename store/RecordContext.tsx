@@ -1,8 +1,15 @@
 import React, { createContext, useState } from 'react';
 
 interface RecordContextType {
-  record: any | null;
-  setRecord: React.Dispatch<React.SetStateAction<any>>;
+  record: RecordSelected | null;
+  setRecord: React.Dispatch<React.SetStateAction<RecordSelected | null>>;
+}
+
+interface RecordSelected {
+  categoryID: number
+  value: number
+  month: string
+  name: string
 }
 
 export const RecordContext = createContext<RecordContextType>({
@@ -11,7 +18,7 @@ export const RecordContext = createContext<RecordContextType>({
 });
 
 export const RecordProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const [record, setRecord] = useState<any | null>(null);
+  const [record, setRecord] = useState<RecordSelected | null>(null);
 
   return (
     <RecordContext.Provider value={{ record, setRecord }}>

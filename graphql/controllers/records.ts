@@ -1,4 +1,4 @@
-import { dbConnect, dbUpdate } from "../../db/dbConntect";
+import { dbConnect, dbUpdate } from "../lib/dbConntect";
 
 class RecordsController {
   async getRecords(categoryID, month) {

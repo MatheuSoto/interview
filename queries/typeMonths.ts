@@ -1,14 +1,12 @@
 import { gql } from "@apollo/client";
 
-const GET_TYPE_MONTHS = (type: string) => {
-  return gql`
-    {
-      sectionMonths(name: "${type}") {
-        name
-        value
-      }
+const GET_TYPE_MONTHS = gql`
+  query sectionMonths($name: String) {
+    sectionMonths(name: $name) {
+      name
+      amount
     }
-  `;
-};
+  }
+`;
 
 export default GET_TYPE_MONTHS;

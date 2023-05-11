@@ -1,6 +1,11 @@
 import CategoryMonth from "./CategoryMonth";
+import { ICategory } from "./types";
 
-const Category = ({ category }) => {
+interface ICategoryProps{
+  category: ICategory
+}
+
+const Category = ({ category }: ICategoryProps) => {
   return (
     <tr
       className="border-b border-gray-200 dark:border-gray-700"

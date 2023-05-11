@@ -1,13 +1,20 @@
 import { useContext, useState } from "react";
-import { RecordContext } from "../store/recordContext";
+import { RecordContext } from "../../store/RecordContext";
 import { useMutation } from "@apollo/client";
-import MOVE_RECORD from "../queries/moveRecord";
-import client from "../lib/graphql";
+import MOVE_RECORD from "../../queries/moveRecord";
+import client from "../../lib/graphql";
+import { IMonth } from "../template/types";
+import { ICategory } from "./types";
 
-const CategoryMonth = ({ month, category }) => {
+interface ICategoryMonthProps {
+  month: IMonth
+  category: ICategory
+}
+
+const CategoryMonth = ({ month, category }: ICategoryMonthProps) => {
   const { setRecord, record } = useContext(RecordContext);
   const [isDraggingOver, setIsDraggingOver] = useState(false);
-  const [moveRecord, { loading, error }] = useMutation(MOVE_RECORD);
+  const [moveRecord] = useMutation(MOVE_RECORD);
 
   const recordSelected =
     record && record.categoryID === category.id && record.month === month.name;
@@ -20,7 +27,7 @@ const CategoryMonth = ({ month, category }) => {
     const draggedRecord = event.dataTransfer.getData("text/plain");
     setMoveRecord({
       recordID: parseInt(JSON.parse(draggedRecord).id),
-      categoryID: parseInt(category.id),
+      categoryID: category.id,
       month: month.name
     })
     setIsDraggingOver(false);
@@ -49,7 +56,7 @@ const CategoryMonth = ({ month, category }) => {
         setRecord({
           month: month.name,
           categoryID: category.id,
-          value: month.value,
+          value: month.amount,
           name: category.name,
         })
       }
@@ -59,7 +66,7 @@ const CategoryMonth = ({ month, category }) => {
         <div
           className="bg-blue-200 h-full w-full px-6 py-4 transition duration-150 ease-out "
         >
-          {month.value ? `$${month.value}` : "-"}
+          {month.amount ? `$${month.amount}` : "-"}
         </div>
       ) : (
         <div
@@ -73,7 +80,7 @@ const CategoryMonth = ({ month, category }) => {
           onDragOver={handleDragOver}
           onDrop={handleDrop}
         >
-          {month.value ? `$${month.value}` : "-"}
+          {month.amount ? `$${month.amount}` : "-"}
         </div>
       )}
     </td>

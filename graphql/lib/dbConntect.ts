@@ -1,5 +1,5 @@
-import records from './records.json'
-import categories from './categories.json'
+import records from '../../db/records.json'
+import categories from '../../db/categories.json'
 import fs from 'fs-extra';
 import path from 'path';
 

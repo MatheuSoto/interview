@@ -1,10 +1,10 @@
 import { useState } from "react";
-import ChevronDown from "../icons/ChevronDown";
+import ChevronDown from "../../icons/ChevronDown";
 import { useQuery } from "@apollo/client";
-import GET_TYPE_MONTHS from "../queries/typeMonths";
-import CategoriesList from "./CategoriesList";
-import CategoryError from "./CategoryError";
-import CategoryLoading from "./CategoryLoading";
+import GET_TYPE_MONTHS from "../../queries/typeMonths";
+import CategoriesList from "../categories/CategoriesList";
+import CategoryError from "../categories/CategoryError";
+import CategoryLoading from "../categories/CategoryLoading";
 
 interface ITableSection {
   name: string;
@@ -16,7 +16,7 @@ const TableSection = ({ name }: ITableSection) => {
     loading,
     error,
     data,
-  } = useQuery(GET_TYPE_MONTHS(name));
+  } = useQuery(GET_TYPE_MONTHS, { variables: { name } });
 
   if(error) return <CategoryError />
   if(loading) return <CategoryLoading />
@@ -44,7 +44,7 @@ const TableSection = ({ name }: ITableSection) => {
         {data &&
           data.sectionMonths.map((month) => (
             <td className="px-6 py-4 bg-gray-50" key={month.name}>
-              {month.value !== 0 ? `$${month.value}` : "-"}
+              {month.amount !== 0 ? `$${month.amount}` : "-"} 
             </td>
           ))}
       </tr>
