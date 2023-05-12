@@ -8,7 +8,8 @@ const CategorySidebar = () => {
   const { record } = useContext(RecordContext);
   
   const { data } = useQuery(GET_CATEGORY, {
-    variables: { id: record.categoryID, month: record.month }
+    variables: { id: record.categoryID, month: record.month },
+    fetchPolicy: 'network-only'
   });
 
   return (

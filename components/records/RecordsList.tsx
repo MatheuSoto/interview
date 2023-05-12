@@ -14,6 +14,7 @@ const RecordsList = ({ record }) => {
       categoryID: parseInt(record.categoryID),
       month: record.month,
     },
+    fetchPolicy: 'network-only'
   });
 
   if (error) return <RecordError />;
